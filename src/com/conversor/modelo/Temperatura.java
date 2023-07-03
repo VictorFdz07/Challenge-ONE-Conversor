@@ -1,6 +1,8 @@
 package com.conversor.modelo;
 
 import javax.swing.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Temperatura extends Opcion implements Conversor{
     Object[] opcionesTemperatura = {"De Fahrenheit a Celsius","De Fahrenheit a Kelvin",
@@ -18,23 +20,23 @@ public class Temperatura extends Opcion implements Conversor{
                 return this.resultado;
             //Fahrenheit a Kelvin
             case 1:
-                this.resultado = (5.0/9.0*(valor-32.0))+273.0;
+                this.resultado = ((5.0/9.0*(valor-32.0))+273.0);
                 return this.resultado;
             //Celsius a Fahrenheit
             case 2:
-                this.resultado = 9.0/5.0*valor+32.0;
+                this.resultado = (9.0/5.0*valor+32.0);
                 return this.resultado;
             //Celsius a Kelvin
             case 3:
-                this.resultado = valor+273.0;
+                this.resultado = (valor+273.0);
                 return this.resultado;
             //Kelvin a Fahrenheit
             case 4:
-                this.resultado = (9.0/5.0*(valor-273.0))+32.0;
+                this.resultado = ((9.0/5.0*(valor-273.0))+32.0);
                 return this.resultado;
             //Kelvin a Celsius
             case 5:
-                this.resultado = valor-273.0;
+                this.resultado = (valor-273.0);
                 return this.resultado;
         }
 
@@ -65,37 +67,34 @@ public class Temperatura extends Opcion implements Conversor{
         }
 
         double valor = Double.parseDouble(this.inputValue);
-        if (selectedValue.equals("Conversor Temperatura")){
-            selectedValue = JOptionPane.showInputDialog(null,
-                    "Seleccione la temperatura a la cual desea convertir", "Menú",
-                    JOptionPane.INFORMATION_MESSAGE, null,
-                    opcionesTemperatura, opcionesTemperatura[0]);
 
-            if (selectedValue.equals("De Fahrenheit a Celsius")){
-                JOptionPane.showMessageDialog(null,"El valor en Fahrenheit es: "
-                        + this.convertir(0,valor), "Resultado", JOptionPane.INFORMATION_MESSAGE);
-            }
-            if (selectedValue.equals("De Fahrenheit a Kelvin")){
-                JOptionPane.showMessageDialog(null,"El valor en Fahrenheit es: "
-                        + this.convertir(1,valor), "Resultado", JOptionPane.INFORMATION_MESSAGE);
-            }
-            if (selectedValue.equals("De Celsius a Fahrenheit")){
-                JOptionPane.showMessageDialog(null,"El valor en Celsius es: "
-                        + this.convertir(2,valor), "Resultado", JOptionPane.INFORMATION_MESSAGE);
-            }
-            if (selectedValue.equals("De Celsius a Kelvin")){
-                JOptionPane.showMessageDialog(null,"El valor en Celsius es: "
-                        + this.convertir(3,valor), "Resultado", JOptionPane.INFORMATION_MESSAGE);
-            }
-            if (selectedValue.equals("De Kelvin a Fahrenheit")){
-                JOptionPane.showMessageDialog(null,"El valor en Kelvin es: "
-                        + this.convertir(4,valor), "Resultado", JOptionPane.INFORMATION_MESSAGE);
-            }
-            if (selectedValue.equals("De Kelvin a Celsius")){
-                JOptionPane.showMessageDialog(null,"El valor en Kelvin es: "
-                        + this.convertir(5,valor), "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        Map<Integer, String> conversionesTemperatura = new HashMap<>();
+        conversionesTemperatura.put(0, "De Fahrenheit a Celsius");
+        conversionesTemperatura.put(1, "De Fahrenheit a Kelvin");
+        conversionesTemperatura.put(2, "De Celsius a Fahrenheit");
+        conversionesTemperatura.put(3, "De Celsius a Kelvin");
+        conversionesTemperatura.put(4, "De Kelvin a Fahrenheit");
+        conversionesTemperatura.put(5, "De Kelvin a Celsius");
+
+        // Obtener el valor seleccionado
+        selectedValue = JOptionPane.showInputDialog(null, "Seleccione la moneda a la cual desea convertir", "Menú",
+                JOptionPane.INFORMATION_MESSAGE, null, opcionesTemperatura, opcionesTemperatura[0]).toString();
+
+        // Verificar si el valor seleccionado está en el mapa de conversiones
+        int indiceTemperatura = -1;
+        for (Map.Entry<Integer, String> entry : conversionesTemperatura.entrySet()) {
+            if (entry.getValue().equals(selectedValue)) {
+                indiceTemperatura = entry.getKey();
+                break;
             }
         }
+
+        if (indiceTemperatura != -1) {
+            String monedaDestino = ((String) selectedValue).split(" a ")[1];
+            JOptionPane.showMessageDialog(null, "El valor en " + monedaDestino +" es: "+ this.convertir(indiceTemperatura, valor), "Resultado", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+
 
         this.menuContinuar();
 

@@ -7,6 +7,5 @@ public class Main {
         Opcion opcion = new Opcion();
 
         opcion.menu();
-
     }
 }

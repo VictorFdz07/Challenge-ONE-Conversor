@@ -3,7 +3,8 @@ package com.conversor.modelo;
 import javax.swing.*;
 
 public class Opcion {
-    Object[] opcionesDeConversion = { "Conversor Moneda", "Conversor Temperatura", "Conversor Distancia", "Conversor Tiempo"};
+    Object[] opcionesDeConversion = { "Conversor Moneda", "Conversor Temperatura", "Conversor Distancia",
+            "Conversor Tiempo", "Conversor Unidades"};
     Object[] opcionesContinuar = { "Yes", "No", "Cancel" };
     int tipo;
     Double resultado;
@@ -37,7 +38,13 @@ public class Opcion {
                 "Seleccione una opción de conversión", "Menú",
                 JOptionPane.INFORMATION_MESSAGE, null,
                 opcionesDeConversion, opcionesDeConversion[0]);
+
         if (selectedValue != null ) {
+            if (selectedValue.equals("Conversor Moneda")) {
+                Moneda moneda = new Moneda();
+                moneda.menuMoneda(selectedValue);
+
+            }
             if (selectedValue.equals("Conversor Temperatura")) {
                 Temperatura temperatura = new Temperatura();
                 temperatura.menuTemperatura(selectedValue);
