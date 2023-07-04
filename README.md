@@ -41,5 +41,6 @@ Conversor de <strong>Monedas, Temperatura, Distancia, Tiempo y Unidades.</strong
 
 ## Personas-Desarrolladores del Proyecto
 
+![119267203](https://github.com/VictorFdz07/Challenge-ONE-Conversor/assets/119267203/cf2dfee2-295a-4d25-be30-e8f05535cd64)
 
 
