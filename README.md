@@ -40,7 +40,7 @@ Conversor de <strong>Monedas, Temperatura, Distancia, Tiempo y Unidades.</strong
 **¡En el IDE de tu agrado, abre el proyecto y ejecútalo!**
 
 ## Personas-Desarrolladores del Proyecto
-
-![119267203](https://github.com/VictorFdz07/Challenge-ONE-Conversor/assets/119267203/cf2dfee2-295a-4d25-be30-e8f05535cd64)
-
+<p align="center"> 
+    <img src="https://github.com/VictorFdz07/Challenge-ONE-Conversor/assets/119267203/cf2dfee2-295a-4d25-be30-e8f05535cd64" width=25%> 
+</p>
 
