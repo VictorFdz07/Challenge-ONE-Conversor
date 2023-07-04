@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07cd0190-ea12-49f8-852d-7b0e9a7f3049" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/conversor/modelo/Distancia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/conversor/modelo/Tiempo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/conversor/modelo/Unidades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
